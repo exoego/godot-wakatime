@@ -204,7 +204,7 @@ func clean_downloaded_files():
 
 
 func delete_file(path):
-	var dir = DirAccess.new()
+	var dir = DirAccess.open(path)
 	var error = dir.remove(path)
 	if error != OK:
 		pprint_error('Failed to remove %s' % path)
